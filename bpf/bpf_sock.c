@@ -28,6 +28,7 @@
 static __always_inline __maybe_unused bool is_v4_loopback(__be32 daddr)
 {
 	/* Check for 127.0.0.0/8 range, RFC3330. */
+	// Binary - 0111 1111 - 0000 0000 - 0000 0000 - 0000 0000
 	return (daddr & bpf_htonl(0x7f000000)) == bpf_htonl(0x7f000000);
 }
 
